@@ -23,6 +23,9 @@
 		54431BB7257FDB33005A5E82 /* DINNextLTArabic-ultra-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54431BAF257FDB33005A5E82 /* DINNextLTArabic-ultra-light.ttf */; };
 		54431BC1257FDC4B005A5E82 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BC0257FDC4B005A5E82 /* RepositoryTableViewCell.swift */; };
 		54431BC4257FE0DA005A5E82 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BC3257FE0DA005A5E82 /* RepoDetailsViewController.swift */; };
+		54431BC7257FED6B005A5E82 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BC6257FED6B005A5E82 /* Repository.swift */; };
+		54431BCB257FFA04005A5E82 /* RepoOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BCA257FFA04005A5E82 /* RepoOwner.swift */; };
+		54431BD0257FFF6B005A5E82 /* DataRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BCF257FFF6B005A5E82 /* DataRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		54431BAF257FDB33005A5E82 /* DINNextLTArabic-ultra-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-ultra-light.ttf"; sourceTree = "<group>"; };
 		54431BC0257FDC4B005A5E82 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		54431BC3257FE0DA005A5E82 /* RepoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewController.swift; sourceTree = "<group>"; };
+		54431BC6257FED6B005A5E82 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		54431BCA257FFA04005A5E82 /* RepoOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoOwner.swift; sourceTree = "<group>"; };
+		54431BCF257FFF6B005A5E82 /* DataRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 		54431BB9257FDB9F005A5E82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54431BCE257FFF56005A5E82 /* Network */,
+				54431BC6257FED6B005A5E82 /* Repository.swift */,
+				54431BCA257FFA04005A5E82 /* RepoOwner.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +152,14 @@
 				54431BC0257FDC4B005A5E82 /* RepositoryTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		54431BCE257FFF56005A5E82 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				54431BCF257FFF6B005A5E82 /* DataRequests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +243,9 @@
 				54431BC4257FE0DA005A5E82 /* RepoDetailsViewController.swift in Sources */,
 				54431B96257FD828005A5E82 /* HomeViewController.swift in Sources */,
 				54431B92257FD828005A5E82 /* AppDelegate.swift in Sources */,
+				54431BC7257FED6B005A5E82 /* Repository.swift in Sources */,
+				54431BCB257FFA04005A5E82 /* RepoOwner.swift in Sources */,
+				54431BD0257FFF6B005A5E82 /* DataRequests.swift in Sources */,
 				54431B94257FD828005A5E82 /* SceneDelegate.swift in Sources */,
 				54431BC1257FDC4B005A5E82 /* RepositoryTableViewCell.swift in Sources */,
 			);
