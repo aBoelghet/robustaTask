@@ -1,0 +1,6 @@
+framework module Pods_RobustaTask {
+  umbrella header "Pods-RobustaTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

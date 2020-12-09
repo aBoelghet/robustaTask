@@ -8,23 +8,6 @@
 import Foundation
 
 struct DataRequests {
-    
-//    func dataRequest(){
-//        let url = URL(string: "https://api.github.com/repositories")!
-//
-//        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-//            guard let data = data else { return }
-//            let decoded = try! JSONDecoder().decode([Repository].self, from: data)
-//            print(decoded)
-//
-//        }
-//        task.resume()
-//
-//    }
-            
-    
-
-       
     //dataRequest which sends request to given URL and convert to Decodable Object
     func dataRequest<T: Decodable>(with url: String, objectType: T.Type, completion: @escaping (Result<T>) -> Void) {
 
@@ -78,3 +61,4 @@ enum Result<T> {
     case success(T)
     case failure(APPError)
 }
+

@@ -1,0 +1,4 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlgoliaSearchClient.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstantSearch.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstantSearchInsights.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework

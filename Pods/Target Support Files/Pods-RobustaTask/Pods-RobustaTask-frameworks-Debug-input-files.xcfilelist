@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-RobustaTask/Pods-RobustaTask-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AlgoliaSearchClient/AlgoliaSearchClient.framework
+${BUILT_PRODUCTS_DIR}/InstantSearch/InstantSearch.framework
+${BUILT_PRODUCTS_DIR}/InstantSearchInsights/InstantSearchInsights.framework
+${BUILT_PRODUCTS_DIR}/Logging/Logging.framework
