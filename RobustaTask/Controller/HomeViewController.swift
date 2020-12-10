@@ -13,6 +13,10 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var reposTableView: UITableView!
     // searchController
     let searchController = UISearchController(searchResultsController: nil)
+    // load more indicator
+    fileprivate var activityIndicator: LoadMoreActivityIndicator!
+    // A simple indicator to show during tableview load data
+    var indicator = UIActivityIndicatorView()
     // MARK: Public View Variables
     let dataRequestOject = DataRequests()
     var repositoriesNameArr: [String] = []
@@ -20,6 +24,8 @@ class HomeViewController: UIViewController{
     var ownerImageURLArr: [String] = []
     var ownerNameArr:[String] = []
     var creationDateArr: [String] = []
+    //    var repositoriesDescArr: [String] = []
+    //    var rerepositoriesprivacyArr: [Bool] = []
     var filteredRepos: [String]!
     var isSearching = false
     
@@ -29,20 +35,24 @@ class HomeViewController: UIViewController{
         // Set this default values for searchController
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         definesPresentationContext = true
         // Add search to table
         reposTableView.tableHeaderView = searchController.searchBar
         // SetTableViewColor
         reposTableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        // Set load more activitiyIndicator
+        reposTableView.tableFooterView = UIView()
+        activityIndicator = LoadMoreActivityIndicator(scrollView: reposTableView, spacingFromLastCell: 10, spacingFromLastCellWhenLoadMoreActionStart: 60)
         // Get repositriesData from Server
         DispatchQueue.global(qos: .background).async {
-            
+            self.reposTableView.showActivityIndicator()
             self.dataRequestOject.dataRequest(with: "https://api.github.com/repositories", objectType: [Repository].self) { (result: Result) in
                 switch result {
                 case .success(let repos):
                     for repo in repos{
                         self.repositoriesNameArr.append(repo.name)
-                        self.dataRequestOject.dataRequest(with: repo.url, objectType: RepoDetails.self) { (result: Result) in
+                        self.dataRequestOject.dataRequest(with: repo.ownerUrl, objectType: RepoOwner.self) { (result: Result) in
                             switch result {
                             case .success(let owner):
                                 print(owner)
@@ -50,6 +60,7 @@ class HomeViewController: UIViewController{
                                 self.ownerImageURLArr.append(owner.avatarUrl)
                                 self.creationDateArr.append(owner.created_at)
                                 DispatchQueue.main.async {                            self.reposTableView.reloadData()
+                                     self.reposTableView.hideActivityIndicator()
                                 }
                                 print(self.ownerNameArr.count)
                             case .failure(let error):
@@ -101,28 +112,51 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
             cell.backgroundColor = #colorLiteral(red: 0.9214808345, green: 0.9216319919, blue: 0.921448648, alpha: 1)
         }
         
-    
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
-   
-   
+    // MARK: TableView Delegte method
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailsVc = storyboard.instantiateViewController(identifier: "RepoDetailsViewController")as! RepoDetailsViewController
+        detailsVc.ownerImageURL = self.ownerImageURLArr[indexPath.row]
+        detailsVc.repoName = self.repositoriesNameArr[indexPath.row]
+        detailsVc.repoOwnerName = self.ownerNameArr[indexPath.row]
+        self.navigationController?.pushViewController(detailsVc, animated: true)
+        
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        activityIndicator.start {
+            DispatchQueue.global(qos: .utility).async {
+                sleep(3)
+                DispatchQueue.main.async { [weak self] in
+                    self?.activityIndicator.stop()
+                }
+            }
+        }
+    }
 }
 extension HomeViewController:UISearchResultsUpdating{
-  
+    
     
     // MARK: SerachController delegete methods
     func updateSearchResults(for searchController: UISearchController) {
+        filteredRepos = repositoriesNameArr
         filterContentForSearchText(searchText: searchController.searchBar.text!)
     }
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        print("Serach Success")
+        if searchText.count > 2 {
+            // Filter your search results here
+            filteredRepos = repositoriesNameArr.filter({ $0.contains(searchText) })
+        }
+        reposTableView.reloadData()
     }
-
-}
     
+}
+
 
 extension UIView {
     
@@ -133,15 +167,33 @@ extension UIView {
     }
     
 }
-extension UIImage {
-  convenience init?(url: URL?) {
-    guard let url = url else { return nil }
-            
-    do {
-      self.init(data: try Data(contentsOf: url))
-    } catch {
-      print("Cannot load image from url: \(url) with error: \(error)")
-      return nil
+// Tableview simple indicator
+extension UITableView {
+    func showActivityIndicator() {
+        DispatchQueue.main.async {
+            let activityView = UIActivityIndicatorView(style: .medium)
+            self.backgroundView = activityView
+            activityView.startAnimating()
+        }
     }
-  }
+
+    func hideActivityIndicator() {
+        DispatchQueue.main.async {
+            self.backgroundView = nil
+        }
+    }
+}
+
+// Handle Seting Image from URL Nativly :-)
+extension UIImage {
+    convenience init?(url: URL?) {
+        guard let url = url else { return nil }
+        
+        do {
+            self.init(data: try Data(contentsOf: url))
+        } catch {
+            print("Cannot load image from url: \(url) with error: \(error)")
+            return nil
+        }
+    }
 }

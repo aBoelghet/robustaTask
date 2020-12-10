@@ -26,11 +26,11 @@
 		54431BC7257FED6B005A5E82 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BC6257FED6B005A5E82 /* Repository.swift */; };
 		54431BCB257FFA04005A5E82 /* RepoOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BCA257FFA04005A5E82 /* RepoOwner.swift */; };
 		54431BD0257FFF6B005A5E82 /* DataRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54431BCF257FFF6B005A5E82 /* DataRequests.swift */; };
-		6C0CB616D5AB3C3B11D67FBF /* Pods_RobustaTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3230A766F548907A5655F3C7 /* Pods_RobustaTask.framework */; };
+		54EAA5F825819D6000998AF6 /* LoadMoreActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAA5F725819D6000998AF6 /* LoadMoreActivityIndicator.swift */; };
+		8E133384A2054237CDA8EB63 /* Pods_RobustaTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3230A766F548907A5655F3C7 /* Pods_RobustaTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2135E51AF71F70AF1AD23765 /* Pods-RobustaTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.debug.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.debug.xcconfig"; sourceTree = "<group>"; };
 		3230A766F548907A5655F3C7 /* Pods_RobustaTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RobustaTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54431B8E257FD828005A5E82 /* RobustaTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobustaTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54431B91257FD828005A5E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +53,9 @@
 		54431BC6257FED6B005A5E82 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		54431BCA257FFA04005A5E82 /* RepoOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoOwner.swift; sourceTree = "<group>"; };
 		54431BCF257FFF6B005A5E82 /* DataRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequests.swift; sourceTree = "<group>"; };
-		5C09B7A746A7FB0769C30A97 /* Pods-RobustaTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.release.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.release.xcconfig"; sourceTree = "<group>"; };
+		54EAA5F725819D6000998AF6 /* LoadMoreActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreActivityIndicator.swift; sourceTree = "<group>"; };
+		73E5D8631E7F2C18521B6DF2 /* Pods-RobustaTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.debug.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.debug.xcconfig"; sourceTree = "<group>"; };
+		DC3EC403D7864A1C7D8FD963 /* Pods-RobustaTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.release.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,22 +63,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C0CB616D5AB3C3B11D67FBF /* Pods_RobustaTask.framework in Frameworks */,
+				8E133384A2054237CDA8EB63 /* Pods_RobustaTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13336E3DFC364470AD9F5BBB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2135E51AF71F70AF1AD23765 /* Pods-RobustaTask.debug.xcconfig */,
-				5C09B7A746A7FB0769C30A97 /* Pods-RobustaTask.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		2A42AEF6DF59721FB75008AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +83,8 @@
 			children = (
 				54431B90257FD828005A5E82 /* RobustaTask */,
 				54431B8F257FD828005A5E82 /* Products */,
-				13336E3DFC364470AD9F5BBB /* Pods */,
 				2A42AEF6DF59721FB75008AE /* Frameworks */,
+				EE4CE7C18E595AA279802F1B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,10 +126,10 @@
 		54431BB9257FDB9F005A5E82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				54431BCE257FFF56005A5E82 /* Search */,
 				54431BC6257FED6B005A5E82 /* Repository.swift */,
 				54431BCA257FFA04005A5E82 /* RepoOwner.swift */,
 				54431BCF257FFF6B005A5E82 /* DataRequests.swift */,
+				54EAA5F725819D6000998AF6 /* LoadMoreActivityIndicator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,11 +172,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		54431BCE257FFF56005A5E82 /* Search */ = {
+		EE4CE7C18E595AA279802F1B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				73E5D8631E7F2C18521B6DF2 /* Pods-RobustaTask.debug.xcconfig */,
+				DC3EC403D7864A1C7D8FD963 /* Pods-RobustaTask.release.xcconfig */,
 			);
-			path = Search;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +290,7 @@
 				54431B92257FD828005A5E82 /* AppDelegate.swift in Sources */,
 				54431BC7257FED6B005A5E82 /* Repository.swift in Sources */,
 				54431BCB257FFA04005A5E82 /* RepoOwner.swift in Sources */,
+				54EAA5F825819D6000998AF6 /* LoadMoreActivityIndicator.swift in Sources */,
 				54431BD0257FFF6B005A5E82 /* DataRequests.swift in Sources */,
 				54431B94257FD828005A5E82 /* SceneDelegate.swift in Sources */,
 				54431BC1257FDC4B005A5E82 /* RepositoryTableViewCell.swift in Sources */,
@@ -441,7 +437,7 @@
 		};
 		54431BA3257FD82D005A5E82 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2135E51AF71F70AF1AD23765 /* Pods-RobustaTask.debug.xcconfig */;
+			baseConfigurationReference = 73E5D8631E7F2C18521B6DF2 /* Pods-RobustaTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,7 +457,7 @@
 		};
 		54431BA4257FD82D005A5E82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C09B7A746A7FB0769C30A97 /* Pods-RobustaTask.release.xcconfig */;
+			baseConfigurationReference = DC3EC403D7864A1C7D8FD963 /* Pods-RobustaTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

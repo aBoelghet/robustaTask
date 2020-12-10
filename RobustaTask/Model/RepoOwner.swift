@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct RepoDetails: Codable {
+struct RepoOwner: Codable {
     // MARK: - Properties
-    let avatarUrl: String
     let name: String
+    let avatarUrl: String
     let created_at: String
 
     // MARK: - Codable
@@ -27,7 +27,6 @@ struct RepoDetails: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.avatarUrl = try container.decode(String.self, forKey: .avatarUrl)
         self.name = try container.decode(String.self, forKey: .name)
-        print(name)
         self.created_at = try container.decode(String.self, forKey: .created_at)
 
 
