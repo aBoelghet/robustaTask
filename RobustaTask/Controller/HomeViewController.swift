@@ -152,9 +152,9 @@ extension HomeViewController:UISearchResultsUpdating{
             // Filter your search results here
             filteredRepos  = repositoriesNameArr.filter({$0.lowercased().contains(searchText.lowercased())})
 
-            print(filteredRepos!)
+            reposTableView.reloadData()
         }
-        reposTableView.reloadData()
+        
     }
     
 }

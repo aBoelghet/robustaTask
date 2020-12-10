@@ -184,15 +184,39 @@
                                     <constraint firstAttribute="width" constant="128" id="JJQ-it-Jon"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WF-zY-Hp7">
+                                <rect key="frame" x="20" y="173.66666666666666" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lwn-iC-vsp"/>
+                                    <constraint firstAttribute="width" constant="60" id="t3J-D5-Czo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1sl-dN-gEY">
+                                <rect key="frame" x="20" y="226.66666666666666" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OEG-nt-3ce"/>
+                                    <constraint firstAttribute="width" constant="60" id="eJo-80-Kn1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hPD-7Z-dpS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1sl-dN-gEY" firstAttribute="leading" secondItem="hPD-7Z-dpS" secondAttribute="leading" constant="20" id="5eC-lq-e1h"/>
                             <constraint firstItem="rml-pj-j1e" firstAttribute="top" secondItem="hPD-7Z-dpS" secondAttribute="top" constant="20" id="Jdj-8p-fCe"/>
                             <constraint firstItem="s7j-fF-aD6" firstAttribute="centerX" secondItem="Jas-kq-4DG" secondAttribute="centerX" id="NLI-jn-gXS"/>
                             <constraint firstItem="s7j-fF-aD6" firstAttribute="top" secondItem="rml-pj-j1e" secondAttribute="bottom" constant="8" symbolic="YES" id="XZs-im-0x5"/>
                             <constraint firstItem="rml-pj-j1e" firstAttribute="centerX" secondItem="Jas-kq-4DG" secondAttribute="centerX" id="XnQ-nn-5DT"/>
+                            <constraint firstItem="0WF-zY-Hp7" firstAttribute="leading" secondItem="hPD-7Z-dpS" secondAttribute="leading" constant="20" id="YQX-0D-Epk"/>
+                            <constraint firstItem="1sl-dN-gEY" firstAttribute="centerY" secondItem="BE8-wa-qtT" secondAttribute="centerY" id="gbF-TK-0me"/>
                             <constraint firstItem="BE8-wa-qtT" firstAttribute="centerX" secondItem="Jas-kq-4DG" secondAttribute="centerX" id="jBL-3N-KmE"/>
+                            <constraint firstItem="0WF-zY-Hp7" firstAttribute="centerY" secondItem="s7j-fF-aD6" secondAttribute="centerY" id="std-fp-nWc"/>
                             <constraint firstItem="BE8-wa-qtT" firstAttribute="top" secondItem="s7j-fF-aD6" secondAttribute="bottom" constant="8" symbolic="YES" id="twj-F9-3eZ"/>
                         </constraints>
                     </view>
