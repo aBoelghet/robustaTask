@@ -140,17 +140,19 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
     }
 }
 extension HomeViewController:UISearchResultsUpdating{
-    
-    
+   
     // MARK: SerachController delegete methods
     func updateSearchResults(for searchController: UISearchController) {
         filteredRepos = repositoriesNameArr
+        print(filteredRepos!)
         filterContentForSearchText(searchText: searchController.searchBar.text!)
     }
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        if searchText.count > 2 {
+        if searchText.count >= 2 {
             // Filter your search results here
-            filteredRepos = repositoriesNameArr.filter({ $0.contains(searchText) })
+            filteredRepos  = repositoriesNameArr.filter({$0.lowercased().contains(searchText.lowercased())})
+
+            print(filteredRepos!)
         }
         reposTableView.reloadData()
     }
